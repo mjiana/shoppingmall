@@ -1,0 +1,78 @@
+table{
+	margin : auto;
+	min-width: 200px;
+	line-height: 1;
+	max-width: 80%;
+}
+table.type02, table.type03 {
+  border-collapse: collapse;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+table.type02 th {
+  width: auto;
+  min-width: 120px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: middle;
+  color: #153d73;
+  border-right: 3px solid #369;
+  border-bottom: 1px solid #ccc;
+}
+table.type03 th {
+  width: auto;
+  min-width: 120px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: middle;
+  color: #153d73;
+  border-right: 1px solid #ccc;
+  border-bottom: 3px solid #369;
+}
+table.type02 td, table.type03 td {
+  width: auto;
+  padding: 10px;
+  vertical-align: middle;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.thfont {
+  width: auto;
+  padding: 10px;
+  font-weight: bold;
+  font-size:x-large;
+  vertical-align: middle;
+  color: #153d73;
+}
+.tac{
+	text-align: center;
+}
+.txt1{
+	width:240px;
+	border:1px solid gray;
+	
+}
+.txtarea1{
+	width:240px;
+	min-height:100px;
+	height:auto;
+	border:1px solid gray;
+	
+}
+.btn1{
+	width:auto;
+	border:2px solid #ccc;
+	border-radius:3px;
+	background-color: white;
+	min-height: 30px;
+	
+}
+a:link{
+	color: black;
+	background-color:#f7f7f7;
+	text-decoration: none;
+}
+a:hover,a:visited {
+	color: black;
+	text-decoration: underline;
+}
