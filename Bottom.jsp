@@ -2,10 +2,11 @@
     pageEncoding="EUC-KR"%>
 <%
 //String conpath = application.getContextPath();
-%>    
+%>   
+<br> 
 <table>
 	<tr>
 		<td><b>Welcome Simple Shopping Mall</b></td>
-		<td><b><a href="/manager/Index.jsp">包府磊其捞瘤</a></b></td>
+		<td><b><a href="../manager/Index.jsp">包府磊其捞瘤</a></b></td>
 	</tr>
 </table>

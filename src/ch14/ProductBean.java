@@ -3,10 +3,10 @@ package ch14;
 public class ProductBean {
 	private int p_no; 
 	private String p_name;
-	private String p_price;
+	private int p_price;
 	private String p_detail;
 	private String p_date;
-	private String p_stock;
+	private int p_stock;
 	private String p_image;
 	
 	public int getP_no() {
@@ -21,10 +21,10 @@ public class ProductBean {
 	public void setP_name(String p_name) {
 		this.p_name = p_name;
 	}
-	public String getP_price() {
+	public int getP_price() {
 		return p_price;
 	}
-	public void setP_price(String p_price) {
+	public void setP_price(int p_price) {
 		this.p_price = p_price;
 	}
 	public String getP_detail() {
@@ -39,10 +39,10 @@ public class ProductBean {
 	public void setP_date(String p_date) {
 		this.p_date = p_date;
 	}
-	public String getP_stock() {
+	public int getP_stock() {
 		return p_stock;
 	}
-	public void setP_stock(String p_stock) {
+	public void setP_stock(int p_stock) {
 		this.p_stock = p_stock;
 	}
 	public String getP_image() {
@@ -51,4 +51,5 @@ public class ProductBean {
 	public void setP_image(String p_image) {
 		this.p_image = p_image;
 	}
+	
 }

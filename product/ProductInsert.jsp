@@ -7,11 +7,7 @@
 <title>Simple Shopping mall Manager</title>
 <link rel="stylesheet" type="text/css" href="../style/shop.css">
 <script type="text/javascript" src="../js/Script.js"></script>
-<script type="text/javascript">
-function pMgr(){
-	location.href="ProductMgr.jsp";
-}
-</script>
+<script type="text/javascript" src="../js/Link.js"></script>
 </head>
 <body onload="pform.name.focus()">
 <%@ include file="../Top.jsp" %>
@@ -42,9 +38,9 @@ function pMgr(){
 	</tr>
 	<tr>
 		<td colspan="2">
-			<input type="button" class="btn1" value="상품 목록으로 이동" onclick="pMgr()">
 			<input type="reset" class="btn1" value="다시쓰기">
 			<input type="button" class="btn1" value="상품등록" onclick="productCk()">
+			<input type="button" class="btn1" value="목록으로" onclick="pMgr()">
 		</td>
 	</tr>
 </table>
