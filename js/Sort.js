@@ -1,6 +1,7 @@
 //select box 하나로 목록 정렬하기
-function selectCk(){
-	var sortForm = document.sortForm; //form
+function pselCk(){
+	//alert();
+	var sortForm = document.psortForm; //form
 	var sort = sortForm.sort; //input type = hidden
 	var sel = sortForm.selsort;
 	
@@ -12,6 +13,24 @@ function selectCk(){
 		case "dUp" : sort.value = "p_date asc"; break;
 		case "dDown" : sort.value = "p_date desc"; break;
 		default : sort.value = "p_no desc";
+	}	
+	//alert(sort.value);
+	sortForm.submit();
+}
+function oselCk(){
+	//alert();
+	var sortForm = document.osortForm; //form
+	var sort = sortForm.sort; //input type = hidden
+	var sel = sortForm.selsort;
+	
+	switch (sel.value){
+		case "dUp" : sort.value = "o_date asc"; break;
+		case "dDown" : sort.value = "o_date desc"; break;
+		case "qUp" : sort.value = "o_quantity asc"; break;
+		case "qDown" : sort.value = "o_quantity desc"; break;
+		case "sUp" : sort.value = "o_state asc"; break;
+		case "sDown" : sort.value = "o_state desc"; break;
+		default : sort.value = "o_no desc";
 	}	
 	//alert(sort.value);
 	sortForm.submit();

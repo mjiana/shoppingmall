@@ -25,7 +25,7 @@ String price = df.format(pb.getP_price());
 	</tr>
 	<tr>
 		<td colspan="2">
-			<img src="../images/<%=pb.getP_image() %>" alt="상품 이미지">
+			<img src="../images/<%=pb.getP_image() %>" alt="상품 이미지" class="img">
 		</td>
 	</tr>
 	<tr>

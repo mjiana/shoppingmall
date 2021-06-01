@@ -16,7 +16,7 @@ else mem = "<a href="+conpath+"./member/MemberUpdate.jsp>로그아웃</a>";
 	<tr>
 		<td><b><%=log %></b></td>
 		<td><b><%=mem %></b></td>
-		<td><b><a href="<%=conpath %>/product/Product.jsp">상품목록</a></b></td>
+		<td><b><a href="<%=conpath %>/ProductList.jsp">상품목록</a></b></td>
 		<td><b><a href="<%=conpath %>/cart/CartList.jsp">장바구니</a></b></td>
 		<td><b><a href="<%=conpath %>/order/OrderList.jsp">구매목록</a></b></td>
 	</tr>

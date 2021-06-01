@@ -1,49 +1,66 @@
+body{
+	font-family: ±¼¸²,verdana,tahoma;
+	font-size: 11pt; 
+}
+pre, textarea{
+	font-family: inherit;
+	font-size: inherit;
+}
+form{
+	display: inline;
+}
 table{
 	margin : auto;
-	min-width: 200px;
 	line-height: 1;
-	max-width: 80%;
+	min-width: 200px;
+	/* 
+	border:1px solid black;
+	max-width: 60%; */
 }
 table.type02, table.type03 {
-  border-collapse: collapse;
-  text-align: center;
-  border: 1px solid #ccc;
-}
-table.type02 th {
-  width: auto;
-  min-width: 120px;
-  padding: 10px;
-  font-weight: bold;
-  vertical-align: middle;
-  color: #153d73;
-  border-right: 3px solid #369;
-  border-bottom: 1px solid #ccc;
-}
-table.type03 th {
-  width: auto;
-  min-width: 120px;
-  padding: 10px;
-  font-weight: bold;
-  vertical-align: middle;
-  color: #153d73;
-  border-right: 1px solid #ccc;
-  border-bottom: 3px solid #369;
-}
-table.type02 td, table.type03 td {
-  width: auto;
-  padding: 10px;
-  vertical-align: middle;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+	border-collapse: collapse;
+	text-align: center;
+	border: 1px solid #ccc;
 }
 .thfont {
-  width: auto;
-  padding: 10px;
-  font-weight: bold;
-  font-size:x-large;
-  vertical-align: middle;
-  color: #153d73;
+	font-size:x-large;
+	/*background-color: #FAFAA0;
+	 border-radius: 20px; */
 }
+th, .thfont {
+	width: auto;
+	padding: 10px;
+  	font-weight: bold;
+	vertical-align: middle;
+	color: #FFB400; /* #369; #369F36; #147814; #1E821E; #33993d; #FF7A85; */
+}
+table.type02 th {
+	min-width: 120px;
+	border-right: 3px solid #FFB400; 
+	border-bottom: 1px solid #ccc;
+}
+table.type03 th {
+	min-width: 50px;
+	border-right: 1px solid #ccc;
+	border-bottom: 3px solid #FFB400;
+}
+td{
+	width: auto;
+	padding: 10px;
+	vertical-align: middle;
+}
+table.type02 td, table.type03 td{
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+table.type02 td{
+	min-width: 250px;
+	
+}
+table.type03 td {
+	min-width: 50px;
+}
+
 .tac{
 	text-align: center;
 }
@@ -69,10 +86,26 @@ table.type02 td, table.type03 td {
 }
 a:link{
 	color: black;
-	background-color:#f7f7f7;
+	background-color:#fff9ea; /*#f7f7f7;*/
 	text-decoration: none;
 }
 a:hover,a:visited {
 	color: black;
+	background-color:#fff9ea;
 	text-decoration: underline;
+}
+.img{
+	width: 80%;
+	height: 80%;
+}
+.img2{
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+}
+.right{
+	text-align: right;
+}
+.left{
+	text-align: left;
 }

@@ -6,8 +6,9 @@ function pInsert(){
 }
 
 function pMgr(){
-	location.href="ProductMgr.jsp";
+	location.href="../product/ProductMgr.jsp";
 }
-function pSelect(){
-	alert();
+
+function oMgr(){
+	location.href="../order/OrderMgr.jsp";
 }

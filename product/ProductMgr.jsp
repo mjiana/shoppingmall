@@ -28,8 +28,10 @@ String sort = request.getParameter("sort");
 	</tr>
 	<tr>
 		<td colspan="5" class="right">
-		<form method="post" name="sortForm">
-			<select name="selsort" onchange="selectCk()">
+		<a href="javascript:oMgr()">주문목록</a>
+		&nbsp;
+		<form method="post" name="psortForm">
+			<select name="selsort" onchange="pselCk()">
 				<option value="0">상품정렬</option>
 				<optgroup label="상품명">
 					<option value="nUp">오름차순</option>

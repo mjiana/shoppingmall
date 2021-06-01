@@ -69,13 +69,13 @@ function oDtail(no){
 	document.detail.no.value=no;
 	document.detail.submit();
 }
-function oUpdate(no){
-	document.update.no.value=no;
-	document.update.submit();
+function oUpdate(oform){
+	oform.flag.value="update";
+	oform.submit();
 }
-function oDelete(no){
-	document.delete.no.value=no;
-	document.delete.submit();
+function oDelete(oform){
+	oform.flag.value="delete";
+	oform.submit();
 }
 
 ////////////////////////////////////////////////////////////////
