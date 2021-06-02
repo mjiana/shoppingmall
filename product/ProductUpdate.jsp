@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR" import="ch14.*" %>
-<% request.setCharacterEncoding("euc-kr"); %>    
+<% request.setCharacterEncoding("euc-kr"); 
+String mem_id = (String)session.getAttribute("idKey"); %>    
 <jsp:useBean id="proMgr" class="ch14.ProductMgr"/>    
 <% ProductBean pb = proMgr.getProduct(request.getParameter("no"));  %>
 <!DOCTYPE html>

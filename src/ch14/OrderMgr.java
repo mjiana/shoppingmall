@@ -125,4 +125,58 @@ public class OrderMgr {
 		return result;
 	}//deleteOrder end
 	
+	//insert Order
+	public void insertOrder(OrderBean ob) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = pool.getConnection();
+			String sql = "insert into shop_order(m_id, p_no, o_quantity, o_date, o_state)"+
+			" values(?, ?, ?, now(), 1)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, ob.getM_id());
+			pstmt.setInt(2, ob.getP_no());
+			pstmt.setInt(3, ob.getO_quantity());
+			
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("insertOrder Exception : "+e);
+		} finally {
+			pool.freeConnection(con, pstmt);
+		}
+	}//updateOrder end
+	
+	//회원의 주문 목록 가져오기
+	public Vector getOrder(String id) throws SQLException{
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Vector vResult = new Vector();
+		
+		try {
+			con = pool.getConnection();
+			String sql = "select * from shop_order where m_id=? order by o_date desc";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				OrderBean ob = new OrderBean();
+				ob.setM_id(rs.getString("m_id"));
+				ob.setO_quantity(rs.getInt("o_quantity"));
+				ob.setO_date(rs.getString("o_date"));
+				ob.setO_no(rs.getInt("o_no"));
+				ob.setO_state(rs.getInt("o_state"));
+				ob.setP_no(rs.getInt("p_no"));
+				vResult.add(ob);
+			}//while
+		} catch (Exception e) {
+			System.out.println("getOrder Exception : "+e);
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return vResult;
+	}//getOrder end
+	
 }//class end

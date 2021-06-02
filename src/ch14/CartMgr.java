@@ -11,6 +11,7 @@ public class CartMgr {
 	public void addCart(OrderBean ob) {
 		int pno = ob.getP_no();
 		int qtity = ob.getO_quantity();
+		
 		if(qtity > 0) {
 			if(hCart.containsKey(pno)) {
 				OrderBean temp = (OrderBean)hCart.get(pno);

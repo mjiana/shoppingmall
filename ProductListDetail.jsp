@@ -3,6 +3,7 @@
 <% request.setCharacterEncoding("euc-kr"); %>
 <jsp:useBean id="proMgr" class="ch14.ProductMgr"/>
 <% 
+String mem_id = (String)session.getAttribute("idKey"); 
 ProductBean pb = proMgr.getProduct(request.getParameter("no")); 
 //가격에 천단위마다 ,넣기
 DecimalFormat df = new DecimalFormat("###,###");
@@ -15,7 +16,6 @@ String price = df.format(pb.getP_price());
 <title>Simple Shopping mall</title>
 <link rel="stylesheet" type="text/css" href="./style/shop.css">
 <script type="text/javascript" src="./js/Script.js"></script>
-<script type="text/javascript" src="./js/Sort.js"></script>
 </head>
 <body>
 <%@ include file="Top.jsp" %>
@@ -39,7 +39,7 @@ String price = df.format(pb.getP_price());
 	</tr>
 	<tr>
 		<th>수량</th>
-		<td><input type="text" name="quantity" size="5" value="1">개</td>
+		<td><input type="text" name="quantity" size="2" value="1" maxlength="2">개</td>
 	</tr>
 	<tr>
 		<th>상세설명</th>

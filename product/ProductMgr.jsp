@@ -4,6 +4,7 @@
 <jsp:useBean id="proMgr" class="ch14.ProductMgr"/>
 <jsp:useBean id="ls" class="ch14.ListSort"/>  
 <%
+String mem_id = (String)session.getAttribute("idKey"); 
 //목록 정렬
 String sort = request.getParameter("sort");
 //String sort1 = request.getParameter("sort1");

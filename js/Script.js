@@ -5,20 +5,7 @@
 function test(){
 	alert("test");
 }
-////////////////////////////////////////////////////////////////
-//추후 회원가입 함수와 합칠 것
-function productDetail(no){
-	document.detail.no.value = no;
-	document.detail.submit();
-}
-function cartUpdate(form){
-	form.flag.value="update";
-	form.submit();
-}
-function cartDelete(form){
-	form.flag.value="delete";
-	form.submit();
-}
+
 ////////////////////////////////////////////////////////////////
 ///// PRODUCT ///// 
 //ProductInsert.jsp
@@ -77,9 +64,24 @@ function oDelete(oform){
 	oform.flag.value="delete";
 	oform.submit();
 }
+////////////////////////////////////////////////////////////////
+///// 고객 페이지 ///// 
+function productDetail(no){
+	document.detail.no.value = no;
+	document.detail.submit();
+}
 
 ////////////////////////////////////////////////////////////////
-/////  ///// 
+///// CART ///// 
+function cUpdate(form){
+	form.flag.value="update";
+	form.submit();
+}
+function cDelete(form){
+	form.flag.value="delete";
+	form.submit();
+}
+////////////////////////////////////////////////////////////////
 //
 function update(mem_id){
 	document.update.mem_id.value = mem_id;

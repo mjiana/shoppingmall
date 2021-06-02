@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<% String mem_id = (String)session.getAttribute("idKey");  %>    
 <!DOCTYPE html>
 <html>
 <head>

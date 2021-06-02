@@ -3,6 +3,7 @@
 <% request.setCharacterEncoding("euc-kr"); %>    
 <jsp:useBean id="proMgr" class="ch14.ProductMgr"/>
 <%
+String mem_id = (String)session.getAttribute("idKey"); 
 //목록 정렬
 String sort = request.getParameter("sort");
 %> 
@@ -23,8 +24,6 @@ String sort = request.getParameter("sort");
 	</tr>
 	<tr>
 		<td colspan="5" class="right">
-		<a href="javascript:oMgr()">주문목록</a>
-		&nbsp;
 		<form method="post" name="psortForm">
 			<select name="selsort" onchange="pselCk()">
 				<option value="0">상품정렬</option>

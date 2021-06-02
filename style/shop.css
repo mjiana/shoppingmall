@@ -17,6 +17,10 @@ table{
 	border:1px solid black;
 	max-width: 60%; */
 }
+table.type01 {
+	border-collapse: collapse;
+	text-align: center;
+}
 table.type02, table.type03 {
 	border-collapse: collapse;
 	text-align: center;
@@ -66,6 +70,16 @@ table.type03 td {
 }
 .txt1{
 	width:240px;
+	border:1px solid gray;
+	
+}
+.txt2{
+	width:60px;
+	border:1px solid gray;
+	
+}
+.txt3{
+	width:40px;
 	border:1px solid gray;
 	
 }

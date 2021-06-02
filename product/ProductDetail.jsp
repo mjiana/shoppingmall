@@ -3,6 +3,7 @@
 <% request.setCharacterEncoding("euc-kr"); %>
 <jsp:useBean id="proMgr" class="ch14.ProductMgr"/>
 <% 
+String mem_id = (String)session.getAttribute("idKey"); 
 ProductBean pb = proMgr.getProduct(request.getParameter("no")); 
 //가격에 천단위마다 ,넣기
 DecimalFormat df = new DecimalFormat("###,###");
