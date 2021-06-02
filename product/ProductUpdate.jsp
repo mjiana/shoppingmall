@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR" import="ch14.*" %>
-<% request.setCharacterEncoding("euc-kr"); 
-String mem_id = (String)session.getAttribute("idKey"); %>    
+<% 
+String mem_id = (String)session.getAttribute("idKey"); 
+if(mem_id != null && mem_id.equals("manager")){
+request.setCharacterEncoding("euc-kr");  
+%>    
 <jsp:useBean id="proMgr" class="ch14.ProductMgr"/>    
 <% ProductBean pb = proMgr.getProduct(request.getParameter("no"));  %>
 <!DOCTYPE html>
@@ -57,3 +60,13 @@ String mem_id = (String)session.getAttribute("idKey"); %>
 <%@ include file="../Bottom.jsp" %>
 </body>
 </html>
+<%
+}else{
+%>
+<script type="text/javascript">
+alert("관리자만 접속 가능합니다.");
+location.href="../index.jsp";
+</script>
+<%	
+}
+%>

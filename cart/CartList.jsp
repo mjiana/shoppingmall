@@ -5,10 +5,9 @@
 <jsp:useBean id="cartMgr" class="ch14.CartMgr" scope="session"/>
 <%
 String mem_id = (String)session.getAttribute("idKey"); 
-java.text.DecimalFormat df = new java.text.DecimalFormat("###,###");
-/* if(id == null){
-response.sendRedirect("../login/Login.jsp");
-} else{ */
+if(mem_id == null){
+	response.sendRedirect("../login/Login.jsp");
+} else{
 %>
 <!DOCTYPE html>
 <html>
@@ -35,6 +34,7 @@ response.sendRedirect("../login/Login.jsp");
 		<th>Á¶È¸</th>
 	</tr>
 	<%
+	java.text.DecimalFormat df = new java.text.DecimalFormat("###,###");
 	int totalPrice = 0; //Àå¹Ù±¸´Ï ÃÑ ±Ý¾×
 	int cnt = 0; //Àå¹Ù±¸´Ï ÃÑ °¹¼ö
 	Hashtable hCart = cartMgr.getCartList();
@@ -45,6 +45,7 @@ response.sendRedirect("../login/Login.jsp");
 	</tr>
 	<%
 	} else{
+		
 		Enumeration hCartKey = hCart.keys();
 		while(hCartKey.hasMoreElements()){
 			OrderBean ob = (OrderBean)hCart.get(hCartKey.nextElement());
@@ -91,5 +92,5 @@ response.sendRedirect("../login/Login.jsp");
 </body>
 </html>
 <%
-//} //if(id == null) end
+} //if(id == null) end
 %>

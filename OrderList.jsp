@@ -30,7 +30,6 @@ if(mem_id == null){
 		<th>주문상태</th>
 	</tr>
 	<%
-	mem_id = "LoverBoy";
 	Vector vlist = orderMgr.getOrder(mem_id);
 	if(vlist.size() == 0){
 	%>

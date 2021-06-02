@@ -1,19 +1,21 @@
 #실행 단축키 블럭으로 잡고 alt+x
-
+drop table member;
 #테이블 생성
 create table member(
-	id varchar(20) not null,
+	id varchar(20) primary key not null,
 	passwd varchar(20),
 	name varchar(20),
-	mem_num1 varchar(6),
-	mem_num2 varchar(7),
-	e_mail varchar(30),
+	birth varchar(6),
+	email varchar(30),
 	phone varchar(30),
 	zipcode varchar(7),
 	address varchar(60),
 	job varchar(30),
-	primary key (id)
+	date datetime default now()
 ) engine=innodb default charset=euckr;
+
+alter member add column mem_date datetime default now();
+#alter table drop column mem_num2;
 
 #테이블 확인
 desc member;
@@ -28,7 +30,7 @@ select * from member;
 
 select * from member where id='11';
 
-update member set phone='010-0000-0000' where id= '11';
+update member set passwd = '111' where id= '111';
 
 
 #데이터 추가

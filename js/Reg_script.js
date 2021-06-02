@@ -1,13 +1,6 @@
 /**
  * 인코딩 미리 바꾸기  UTF-8 -> EUC-KR
  */
-function Isnum(event){
-	if(event.keyCode<47 || event.keyCode>58){
-		alert("숫자만 입력하세요");
-		event.value = "";
-		return;
-	}
-}
 function idCheck(id){
 	var df = document.regForm;
 	if(id == ""){

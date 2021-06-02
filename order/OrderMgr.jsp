@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR" import="java.util.Vector, ch14.*" %>
-<% request.setCharacterEncoding("euc-kr"); %>  
+<% 
+String mem_id = (String)session.getAttribute("idKey"); 
+if(mem_id != null && mem_id.equals("manager")){
+request.setCharacterEncoding("euc-kr"); %>  
 <jsp:useBean id="pMgr" class="ch14.ProductMgr"/>
 <jsp:useBean id="oMgr" class="ch14.OrderMgr"/>
 <jsp:useBean id="ls" class="ch14.ListSort"/>  
@@ -23,11 +26,11 @@ String sort = request.getParameter("sort");
 <%@ include file="../Top.jsp" %>
 <table class="type03">
 	<tr>
-		<td colspan="6"><font class="thfont">주문 목록</font></td>
+		<td colspan="6"><font class="thfont">주문 현황</font></td>
 	</tr>
 	<tr>
 		<td colspan="6" class="right">
-		<a href="javascript:pMgr()">상품목록</a>
+		<a href="javascript:pMgr()">상품 현황</a>
 		&nbsp;
 		<form method="post" name="osortForm">
 			<select name="selsort" onchange="oselCk()">
@@ -98,10 +101,19 @@ String sort = request.getParameter("sort");
 	}//else
 	%>
 </table>
-
 <%@ include file="../Bottom.jsp" %>
 <form name="detail" method="post" action="OrderDetail.jsp">
 	<input type="hidden" name="no">
 </form>
 </body>
 </html>
+<%
+}else{
+%>
+<script type="text/javascript">
+alert("관리자만 접속 가능합니다.");
+location.href="../index.jsp";
+</script>
+<%	
+}
+%>

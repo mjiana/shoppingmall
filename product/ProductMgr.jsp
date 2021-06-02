@@ -3,8 +3,9 @@
 <% request.setCharacterEncoding("euc-kr"); %>    
 <jsp:useBean id="proMgr" class="ch14.ProductMgr"/>
 <jsp:useBean id="ls" class="ch14.ListSort"/>  
-<%
+<% 
 String mem_id = (String)session.getAttribute("idKey"); 
+if(mem_id != null && mem_id.equals("manager")){
 //목록 정렬
 String sort = request.getParameter("sort");
 //String sort1 = request.getParameter("sort1");
@@ -25,11 +26,11 @@ String sort = request.getParameter("sort");
 <%@ include file="../Top.jsp" %>
 <table class="type03">
 	<tr>
-		<td colspan="5"><font class="thfont">상품 목록</font></td>
+		<td colspan="5"><font class="thfont">상품 현황</font></td>
 	</tr>
 	<tr>
 		<td colspan="5" class="right">
-		<a href="javascript:oMgr()">주문목록</a>
+		<a href="javascript:oMgr()">주문 현황</a>
 		&nbsp;
 		<form method="post" name="psortForm">
 			<select name="selsort" onchange="pselCk()">
@@ -124,3 +125,13 @@ String sort = request.getParameter("sort");
 </form>
 </body>
 </html>
+<%
+}else{
+%>
+<script type="text/javascript">
+alert("관리자만 접속 가능합니다.");
+location.href="../index.jsp";
+</script>
+<%	
+}
+%>

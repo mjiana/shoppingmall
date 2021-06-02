@@ -12,3 +12,9 @@ function pMgr(){
 function oMgr(){
 	location.href="../order/OrderMgr.jsp";
 }
+function login(){
+	location.href='./login/Login.jsp';
+}
+function pList(){
+	location.href='ProductList.jsp';
+}

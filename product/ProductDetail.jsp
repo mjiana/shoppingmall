@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR" import="ch14.*, java.text.DecimalFormat"%>
-<% request.setCharacterEncoding("euc-kr"); %>
-<jsp:useBean id="proMgr" class="ch14.ProductMgr"/>
 <% 
 String mem_id = (String)session.getAttribute("idKey"); 
+if(mem_id != null && mem_id.equals("manager")){
+	request.setCharacterEncoding("euc-kr"); 
+%>
+<jsp:useBean id="proMgr" class="ch14.ProductMgr"/>
+<% 
 ProductBean pb = proMgr.getProduct(request.getParameter("no")); 
 //가격에 천단위마다 ,넣기
 DecimalFormat df = new DecimalFormat("###,###");
@@ -66,3 +69,13 @@ String price = df.format(pb.getP_price());
 </form>
 </body>
 </html>
+<%
+}else{
+%>
+<script type="text/javascript">
+alert("관리자만 접속 가능합니다.");
+location.href="../index.jsp";
+</script>
+<%	
+}
+%>

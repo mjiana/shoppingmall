@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR" import="java.util.*, ch14.*"  %>
 <title>Simple Shopping mall</title>
-<% request.setCharacterEncoding("euc-kr"); %>
+<% request.setCharacterEncoding("euc-kr"); 
+String mem_id = (String)session.getAttribute("idKey"); %>
 <jsp:useBean id="cartMgr" class="ch14.CartMgr" scope="session"/>
 <jsp:useBean id="orderMgr" class="ch14.OrderMgr"/>    
 <jsp:useBean id="proMgr" class="ch14.ProductMgr"/>   
@@ -12,14 +13,13 @@ Enumeration hCartKey = hCart.keys();
 if(hCart.size() != 0){
 	while(hCartKey.hasMoreElements()){
 		OrderBean ob = (OrderBean)hCart.get(hCartKey.nextElement());
+		ob.setM_id(mem_id);
 		//상용 쇼핑몰이라면 이 위치가 전자결제(PG) 시점이다.
 		
 		//주문입력  
 		orderMgr.insertOrder(ob);
-		
 		//재고수량 감소
 		proMgr.reduceProduct(ob);
-		
 		//장바구니 삭제
 		cartMgr.deleteCart(ob);
 	}//while

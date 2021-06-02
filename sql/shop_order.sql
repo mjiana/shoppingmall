@@ -13,6 +13,7 @@ drop table shop_order;
 select * from member;
 select * from shop_product;
 select * from shop_order;
+select * from shop_order where m_id='11' order by o_date desc;
 
 insert into shop_order values(null, 2, 3, now(), 1, 'aaa');
 insert into shop_order values(null, 6, 1, now(), 1, '111');

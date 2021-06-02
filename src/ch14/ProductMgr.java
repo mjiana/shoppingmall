@@ -204,22 +204,23 @@ public class ProductMgr {
 	}//deleteProduct() end
 	
 	//재고수량 감소
-	public boolean reduceProduct(OrderBean ob) {
+	public void reduceProduct(OrderBean ob) {
 		boolean result = false;
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		
+		ResultSet rs = null;
 		try {
 			con = pool.getConnection();
-			String sql = "update shop_product set p_stock=(p_stock - ?) where p_no=? ";
+			String sql = "update shop_product set p_stock=(p_stock-?) where p_no=? ";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, ob.getO_quantity());
 			pstmt.setInt(2, ob.getP_no());
+			
+			pstmt.executeUpdate();
 		} catch (Exception e) {
 			System.out.println("reduceProduct() Exception "+e);
 		} finally {
-			pool.freeConnection(con,pstmt);
+			pool.freeConnection(con,pstmt,rs);
 		}
-		return result;
 	}//reduceProduct() end
 }

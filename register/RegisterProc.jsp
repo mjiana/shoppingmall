@@ -25,6 +25,10 @@ String mem_id = (String)session.getAttribute("idKey");
 		<td><input type="hidden" name="mem_id" value="<%=rb.getMem_id() %>"><%=rb.getMem_id() %></td>
 	</tr>
 	<tr>
+		<th>비밀번호</th>
+		<td><input type="hidden" name="mem_passwd" value="<%=rb.getMem_passwd() %>"><%=rb.getMem_passwd() %></td>
+	</tr>
+	<tr>
 		<th>이름</th>
 		<td><input type="hidden" name="mem_name" value="<%=rb.getMem_name() %>"><%=rb.getMem_name() %></td>
 	</tr>

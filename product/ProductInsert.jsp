@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<% String mem_id = (String)session.getAttribute("idKey");  %>    
+<% 
+String mem_id = (String)session.getAttribute("idKey"); 
+if(mem_id != null && mem_id.equals("manager")){  %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,3 +51,13 @@
 <%@ include file="../Bottom.jsp" %>
 </body>
 </html>
+<%
+}else{
+%>
+<script type="text/javascript">
+alert("관리자만 접속 가능합니다.");
+location.href="../index.jsp";
+</script>
+<%	
+}
+%>

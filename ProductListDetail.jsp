@@ -47,8 +47,10 @@ String price = df.format(pb.getP_price());
 	</tr>
 	<tr>
 		<td colspan="2">
+		<% if(mem_id != null){ %>
 			<input type="hidden" name="no" value="<%=pb.getP_no() %>">
 			<input type="submit" class="btn1" value="장바구니 담기">
+		<%} %>
 			<input type="button" class="btn1" value="목록으로" onclick="history.back()">
 		</td>
 	</tr>

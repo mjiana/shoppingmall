@@ -160,10 +160,9 @@ public class OrderMgr {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			
 			while(rs.next()) {
 				OrderBean ob = new OrderBean();
-				ob.setM_id(rs.getString("m_id"));
+				ob.setM_id(id);
 				ob.setO_quantity(rs.getInt("o_quantity"));
 				ob.setO_date(rs.getString("o_date"));
 				ob.setO_no(rs.getInt("o_no"));

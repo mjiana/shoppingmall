@@ -76,18 +76,17 @@ public class MemberMgr {
 		
 		try {
 			con = pool.getConnection();
-			String strQuery = "insert into member value(?,?,?,?,?,?,?,?,?,?)";
+			String strQuery = "insert into member value(?,?,?,?,?,?,?,?,?,now())";
 			pstmt = con.prepareStatement(strQuery);
 			pstmt.setString(1, regBean.getMem_id() );
 			pstmt.setString(2, regBean.getMem_passwd() );
 			pstmt.setString(3, regBean.getMem_name() );
 			pstmt.setString(4, regBean.getMem_num1() );
-			pstmt.setString(5, regBean.getMem_num2() );
-			pstmt.setString(6, regBean.getMem_email() );
-			pstmt.setString(7, regBean.getMem_phone() );
-			pstmt.setString(8, regBean.getMem_zipcode() );
-			pstmt.setString(9, regBean.getMem_address() );
-			pstmt.setString(10, regBean.getMem_job() );
+			pstmt.setString(5, regBean.getMem_email() );
+			pstmt.setString(6, regBean.getMem_phone() );
+			pstmt.setString(7, regBean.getMem_zipcode() );
+			pstmt.setString(8, regBean.getMem_address() );
+			pstmt.setString(9, regBean.getMem_job() );
 			int count = pstmt.executeUpdate();
 			
 			if(count > 0) flag = true;
@@ -138,9 +137,8 @@ public class MemberMgr {
 			if(rs.next()) {
 				rb.setMem_id(rs.getString("id"));
 				rb.setMem_name(rs.getString("name"));
-				rb.setMem_num1(rs.getString("mem_num1"));
-				rb.setMem_num2(rs.getString("mem_num2"));
-				rb.setMem_email(rs.getString("e_mail"));
+				rb.setMem_num1(rs.getString("birth"));
+				rb.setMem_email(rs.getString("email"));
 				rb.setMem_phone(rs.getString("phone"));
 				rb.setMem_zipcode(rs.getString("zipcode"));
 				rb.setMem_address(rs.getString("address"));
@@ -216,18 +214,17 @@ public class MemberMgr {
 			con = pool.getConnection();
 			//System.out.println("id="+regBean.getMem_id());
 			String sql = "update member "
-					+"set name=?, mem_num1=?, mem_num2=?, e_mail=?, phone=?, zipcode=?, address=?, job=? "
+					+"set name=?, birth=?, email=?, phone=?, zipcode=?, address=?, job=? "
 					+"where id=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, regBean.getMem_name() );
 			pstmt.setString(2, regBean.getMem_num1() );
-			pstmt.setString(3, regBean.getMem_num2() );
-			pstmt.setString(4, regBean.getMem_email() );
-			pstmt.setString(5, regBean.getMem_phone() );
-			pstmt.setString(6, regBean.getMem_zipcode() );
-			pstmt.setString(7, regBean.getMem_address() );
-			pstmt.setString(8, regBean.getMem_job() );
-			pstmt.setString(9, regBean.getMem_id());
+			pstmt.setString(3, regBean.getMem_email() );
+			pstmt.setString(4, regBean.getMem_phone() );
+			pstmt.setString(5, regBean.getMem_zipcode() );
+			pstmt.setString(6, regBean.getMem_address() );
+			pstmt.setString(7, regBean.getMem_job() );
+			pstmt.setString(8, regBean.getMem_id());
 			
 			int count = pstmt.executeUpdate();
 			if(count == 1) result = true;

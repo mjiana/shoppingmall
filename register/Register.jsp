@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<% String mem_id = (String)session.getAttribute("idKey");  %>
+<% String mem_id = (String)session.getAttribute("idKey");  
+if(mem_id != null){
+	response.sendRedirect("../login/Login.jsp");
+}else{
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,8 +41,8 @@
 		<td><input type="text" class="txt1" name="mem_name"></td>
 	</tr>
 	<tr>
-		<th>생년월일</th>
-		<td><input type="text" class="txt1" name="mem_num1" maxlength="6" onkeyup="if(this.value.length==6)regForm.mem_email.focus()"></td>
+		<th>생년월일(6자리)</th>
+		<td><input type="text" class="txt1" name="mem_num1" maxlength="6" onkeyup="if(this.value.length==6)regForm.mem_email.focus()" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"></td>
 	</tr>
 	<tr>
 		<th>이메일</th>
@@ -48,9 +52,9 @@
 		<th>전화번호</th>
 		<td>
 			<input type="hidden" name="mem_phone">
-			<input type="text" class="txt3" name="mem_phone1" size="5" maxlength="3" onkeyup="if(this.value.length==3)regForm.mem_phone2.focus()"> 
-			- <input type="text" class="txt3" name="mem_phone2" size="5" maxlength="4" onkeyup="if(this.value.length==4)regForm.mem_phone3.focus()"> 
-			- <input type="text" class="txt3" name="mem_phone3" size="5" maxlength="4">
+			<input type="text" class="txt3" name="mem_phone1" maxlength="3" onkeyup="if(this.value.length==3)regForm.mem_phone2.focus()" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> 
+			- <input type="text" class="txt3" name="mem_phone2" maxlength="4" onkeyup="if(this.value.length==4)regForm.mem_phone3.focus()" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> 
+			- <input type="text" class="txt3" name="mem_phone3" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 		</td>
 	</tr>
 	<tr>
@@ -96,3 +100,6 @@
 </form>
 </body>
 </html>
+<%
+}
+%>
